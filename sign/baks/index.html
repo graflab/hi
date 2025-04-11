@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violet-Core Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Violet-Core Demo</h1>
+        <h2>Violet Graf Technologies Inc.</h2>
+    </div>
+
+    <!-- Explanatory Card Section -->
+    <div class="explanatory-card">
+        <h2>How This Demo Works</h2>
+        <p>
+            This demo allows you to securely sign documents by generating a unique Violet ID based on the document's content and a nickname.
+            Once created, the Violet ID is recorded on the blockchain. You can download the transaction receipt (.vgti file) to verify later. <b>No files are uploaded to our servers/transferred over the internet.  ID generation happens in your browser on your own computer.</b>
+
+        </p>
+    </div>
+
+    <!-- Document Sign Form Section -->
+    <div class="container">
+        <h1><b>Step 1:</b> Sign Your Document</h1>
+        <form id="sign-doc-form">
+            <label for="nickname">Document Nickname:</label>
+            <input type="text" id="nickname" name="nickname" placeholder="Enter a nickname" required>
+
+            <label for="file">Set Document:</label>
+            <input type="file" id="file" name="file" required>
+
+            <button type="submit">Sign and Submit</button>
+        </form>
+        
+        <div id="status"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

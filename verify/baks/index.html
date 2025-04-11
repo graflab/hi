@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violet-Core Demo - Verify Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Violet-Core Demo</h1>
+        <h2>Violet Graf Technologies Inc.</h2>
+    </div>
+
+    <!-- Explanatory Card -->
+    <div class="explanatory-card">
+        <h2>How This Verification Works</h2>
+
+<p>
+    To verify your document, set the original document and its corresponding .vgti file. The system will check
+    the file's authenticity using the Violet ID stored on-chain. If the file is verified successfully, you will be provided a link to view the transaction on the Cardano blockchain explorer of your choice (cexplorer.io or cardanoscan.io).
+</p>
+
+
+
+
+    </div>
+
+    <!-- Document Verification Section -->
+    <div class="container">
+        <h1>Verify Your Document</h1>
+        <div class="side-by-side">
+            <div class="box">
+                <h3>Set Original Document</h3>
+                <input type="file" id="original-file" name="original-file">
+            </div>
+            <div class="box">
+                <h3>Set .vgti File (saved on signing the original document)</h3>
+                <input type="file" id="vgti-file" name="vgti-file">
+            </div>
+        </div>
+        <button id="verify-button">Verify</button>
+
+        <div id="result" class="result">
+            <!-- This will display the verification result -->
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+

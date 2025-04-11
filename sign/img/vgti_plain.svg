@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="160"
+   height="160"
+   viewBox="0 0 160 160"
+   version="1.1"
+   id="svg2"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs15">
+    <color-profile
+       name="Blue"
+       xlink:href="file:///usr/share/color/icc/colord/Bluish.icc"
+       id="color-profile2634" />
+  </defs>
+  <!-- Light violet background -->
+  <!-- Text left aligned -->
+  <g
+     id="layer1"
+     transform="translate(-1.9999995,-36.599853)">
+    <rect
+       style="fill:#d7bfdc;stroke:#0d0d0d;stroke-width:0"
+       id="rect2501"
+       width="160"
+       height="160"
+       x="2"
+       y="36.599854"
+       rx="26.340382"
+       ry="21.95653" />
+  </g>
+  <!-- Violet yellow dots for i's and period after Inc. -->
+  <!-- Violet-yellow color #EEE600 -->
+  <!-- Dot of i in Violet -->
+  <!-- Dot of i in Technologies -->
+  <!-- Period after Inc. -->
+  <g
+     id="g2510"
+     transform="translate(0.25,-22.178078)">
+    <text
+       x="81.185303"
+       y="56.739437"
+       font-size="21.9184px"
+       fill="#000000"
+       font-family="Arial"
+       id="text1"
+       text-anchor="start"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.9184px;font-family:Futura-Bold;-inkscape-font-specification:'Futura-Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.21769">Violet</text>
+    <text
+       x="94.691666"
+       y="80.213692"
+       font-size="21.9184px"
+       fill="#000000"
+       font-family="Arial"
+       id="text2"
+       text-anchor="start"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.9184px;font-family:Futura-Bold;-inkscape-font-specification:'Futura-Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.21769">Graf</text>
+    <text
+       x="3.5826087"
+       y="101.28526"
+       font-size="21.9184px"
+       fill="#000000"
+       font-family="Arial"
+       id="text3"
+       text-anchor="start"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.9184px;font-family:Futura-Bold;-inkscape-font-specification:'Futura-Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.21769">Technologies</text>
+    <text
+       x="113.51709"
+       y="126.36487"
+       font-size="21.9184px"
+       fill="#000000"
+       font-family="Arial"
+       id="text4"
+       text-anchor="start"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.9184px;font-family:Futura-Bold;-inkscape-font-specification:'Futura-Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:1.21769">Inc</text>
+    <circle
+       cx="100.2743"
+       cy="42.428642"
+       fill="#eee600"
+       id="circle8"
+       r="2.5355"
+       style="stroke-width:1.26775" />
+    <circle
+       cx="149.93283"
+       cy="124.24676"
+       fill="#eee600"
+       id="circle10"
+       r="2.5355"
+       style="stroke-width:1.26775" />
+    <circle
+       cx="117.9745"
+       cy="87.01265"
+       fill="#eee600"
+       id="circle12"
+       r="2.5355"
+       style="stroke-width:1.26775" />
+  </g>
+</svg>

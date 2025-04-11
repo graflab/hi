@@ -1,0 +1,90 @@
+document.getElementById('verify-button').addEventListener('click', async function () {
+    const originalFile = document.getElementById('original-file').files[0];
+    const vgtiFile = document.getElementById('vgti-file').files[0];
+
+    if (!originalFile || !vgtiFile) {
+        alert("Please upload both the original document and the .vgti file.");
+        return;
+    }
+
+    const originalFileReader = new FileReader();
+    const vgtiFileReader = new FileReader();
+
+    // Fetch slot number
+    async function fetchSlotNumber() {
+        const response = await fetch('https://api.graf.land/tip');
+        const data = await response.json();
+        return data.slot || 0;  // Fallback to 0 if slot is unavailable
+    }
+
+    // Read the original file
+    originalFileReader.onloadend = async function () {
+        const fileHash = CryptoJS.SHA256(CryptoJS.lib.WordArray.create(originalFileReader.result)).toString(CryptoJS.enc.Hex);
+        const slotNumber = await fetchSlotNumber();
+
+        // After reading the original file, read the .vgti file
+        vgtiFileReader.onloadend = async function () {
+            try {
+                const vgtiContent = JSON.parse(vgtiFileReader.result);
+
+                // Extract fields from .vgti file
+                const { nickname, opt_secret, email } = vgtiContent;
+
+                // Recreate the Violet ID using the same logic as the signing process
+                const violet_id = hashVioletID(nickname, fileHash, slotNumber, opt_secret);
+
+                // Check the Violet ID with the backend
+                const response = await fetch(`https://api.graf.land/check-violet-id`, {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                     nickname: nickname,
+                     fileHash: fileHash,
+                     email: email,  // Extracted from .vgti file
+                     opt_secret: opt_secret
+                   }),
+              });
+
+
+                const result = await response.json();
+
+                // Handle the verification result
+                if (result.status === 'found') {
+                    const cExplorerLink = `https://preprod.cexplorer.io/tx/${result.transaction_id}`;
+                    const cardanoScanLink = `https://preprod.cardanoscan.io/transaction/${result.transaction_id}`;
+
+                    document.getElementById('result').innerHTML = `
+                        <p class="success">File Verified <span>✔️</span></p>
+                        <p>Transaction ID: ${result.transaction_id}</p>
+                        <a href="${cExplorerLink}" target="_blank" class="proceed-link">View on CExplorer</a>
+                        <a href="${cardanoScanLink}" target="_blank" class="proceed-link">View on Cardanoscan</a>
+                        <a href="https://docs.graf.land" class="proceed-link">Return to Sign Document</a>
+                    `;
+                } else {
+                    document.getElementById('result').innerHTML = `
+                        <p class="fail">File Not Verified <span>❌</span></p>
+                    `;
+                }
+            } catch (error) {
+                console.error("Error parsing .vgti file or verifying file:", error);
+                document.getElementById('result').innerText = "An error occurred during verification.";
+            }
+        };
+
+        // Read .vgti file as text
+        vgtiFileReader.readAsText(vgtiFile);
+    };
+
+    // Read original file as ArrayBuffer
+    originalFileReader.readAsArrayBuffer(originalFile);
+});
+
+// Function to hash Violet ID based on the same protocol as signing
+function hashVioletID(nickname, fileHash, slotNumber, opt_secret) {
+    const context = "Document-Signing-App";
+    const identityContext = localStorage.getItem('userEmail') || 'user@example.com';  // Example for identity context (user email)
+    const slotStr = slotNumber.toString().slice(-3);  // Take the last 3 digits of slot number
+
+    const combined = `${context}${identityContext}${nickname}${fileHash}${slotStr}${opt_secret}`;
+    return CryptoJS.SHA256(combined).toString(CryptoJS.enc.Hex);  // Generate the final Violet ID
+}

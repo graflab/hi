@@ -1,0 +1,183 @@
+/* Universal box-sizing and body reset */
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Clean, minimalist font */
+    margin: 0;
+    background-color: #F9FAFB; /* Soft, light background */
+    color: #111827;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+    overflow: auto;
+}
+
+/* Container styling */
+.container {
+    max-width: 700px;
+    width: 100%;
+    background-color: white;
+    padding: 60px 40px; /* Increased padding-top to allow room for the logo */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+    position: relative; /* Ensures proper layout positioning */
+}
+
+.container:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Slight hover effect */
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+label {
+    font-weight: 500;
+    font-size: 16px;
+    color: #374151;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Form input fields */
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #D1D5DB;
+    margin-bottom: 16px;
+}
+
+/* Submit button */
+button {
+    background-color: #3B82F6;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2563EB;
+}
+
+/* Status div */
+#status {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+/* Styling for the explainer area (transaction explanation) */
+.status-info {
+    color: #3B82F6;
+    font-weight: bold;
+}
+
+.status-code {
+    background-color: #111827;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.status-success {
+    color: #10B981;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.status-error {
+    color: #EF4444;
+    font-weight: bold;
+}
+
+/* Add hover effect to blocks */
+.status-code:hover {
+    background-color: #374151;
+}
+
+/* Link to Cardano explorer */
+.explorer-link {
+    color: #3B82F6;
+    text-decoration: underline;
+}
+
+.explorer-link:hover {
+    color: #2563EB;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 60px 20px; /* Increased top padding for mobile to avoid logo overlap */
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Logo container and styling */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    padding-top: 0;
+    padding-bottom: 0;
+    z-index: 1000; /* Ensures the logo is always on top */
+}
+
+/* Ensure the logo is fully visible */
+.logo {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for logo */
+.logo:hover {
+    transform: rotate(15deg);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .logo-container {
+        top: 10px; /* Give enough space for mobile */
+        left: 50%;
+        transform: translateX(-50%); /* Center the logo on mobile */
+    }
+
+    .logo {
+        max-width: 100px; /* Smaller size for mobile devices */
+    }
+}

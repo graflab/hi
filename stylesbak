@@ -1,0 +1,197 @@
+/* Universal box-sizing and body reset */
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Clean, minimalist font */
+    margin: 0;
+    background-color: #F9FAFB; /* Soft, light background */
+    color: #111827;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+    overflow: auto;
+}
+
+/* Logo container positioning and styling */
+.logo-container {
+    position: absolute;
+    top: 20px; /* Ensures the logo is visible with enough space */
+    left: 20px; /* Left aligns the logo */
+    z-index: 1000; /* Makes sure it's always on top */
+}
+
+/* Logo size adjustment */
+.logo {
+    max-width: 120px; /* Adjust logo size for desktop */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Container styling for the card */
+.container {
+    position: relative;
+    margin-top: 120px; /* Ensures the content is pushed down for mobile */
+    padding: 40px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    max-width: 700px;
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for desktop */
+.container:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Slight hover effect */
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+label {
+    font-weight: 500;
+    font-size: 16px;
+    color: #374151;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Form input fields */
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #D1D5DB;
+    margin-bottom: 16px;
+}
+
+/* Submit button */
+button {
+    background-color: #3B82F6;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2563EB;
+}
+
+/* Retain the cta buttons styling */
+.cta {
+    margin-top: 40px;
+    font-size: 1.25rem;
+}
+
+.cta a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #3B82F6;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.cta a:hover {
+    background-color: #2563EB;
+    color: white;
+    box-shadow: 0 5px 20px rgba(106, 13, 173, 0.4); /* Enhanced violet shadow */
+    transform: translateY(-3px); /* Button hover animation */
+}
+
+/* Status div */
+#status {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+/* Styling for the explainer area (transaction explanation) */
+.status-info {
+    color: #3B82F6;
+    font-weight: bold;
+}
+
+.status-code {
+    background-color: #111827;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.status-success {
+    color: #10B981;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.status-error {
+    color: #EF4444;
+    font-weight: bold;
+}
+
+/* Add hover effect to blocks */
+.status-code:hover {
+    background-color: #374151;
+}
+
+/* Link to Cardano explorer */
+.explorer-link {
+    color: #3B82F6;
+    text-decoration: underline;
+}
+
+.explorer-link:hover {
+    color: #2563EB;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    /* Adjust logo size and positioning for mobile */
+    .logo {
+        max-width: 100px; /* Smaller logo size for mobile */
+    }
+
+    .container {
+        margin-top: 160px; /* Add enough top margin for mobile to fit the logo */
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 60px;
+        width: 100%;
+    }
+
+    /* Button adjustment for mobile */
+    button {
+        width: 100%; /* Full-width button on mobile */
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign a file</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <a href="https://docs.graf.land">
+            <img src="img/vgti_png_sq1600.png" alt="Violet Graf Logo" class="logo">
+        </a>
+    </div>
+    <div class="container">
+        <h1>Sign a file</h1>
+        <form id="documentForm">
+            <div class="form-group">
+                <label for="nickname">Give your file a descriptive nickname:</label>
+                <input type="text" id="nickname" name="nickname" required>
+            </div>
+            <div class="form-group">
+                <label for="file">Select your file to hash in the browser (*your file is <b><u>not</u></b> uploaded):</label>
+                <input type="file" id="file" name="file" required>
+            </div>
+            <button type="submit">Sign this file, put its ID on the blockchain and download your verification receipt.</button>
+        </form>
+        <div id="status" class="status"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
